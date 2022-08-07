@@ -38,10 +38,10 @@ Hover кнопки: #188CE8;
 /* Загальні стилі сайту */
 
 body {
-    background-color: var(--primary-white-color);
     width: 1600px;
-    outline: 2px solid tomato;
     margin: 0 auto;
+
+    background-color: var(--primary-white-color);
     color: var(--primary-text-color);
     font-family: Roboto, sans-serif;
     font-weight: 400;
@@ -65,7 +65,6 @@ h1, h2, h3, h4, h5, h6, p, ul {
     padding: 0 15px;
     width: 1200px;
     margin: 0 auto;
-    outline: 2px solid rgb(78, 187, 75);
 }
 
 .list {
@@ -73,20 +72,17 @@ h1, h2, h3, h4, h5, h6, p, ul {
     padding-left: 0;
 }
 
-
-
 /* Шапка сайту */
-
 /* Логотип */
-
-.header .container {
-
-}
 
 .header {
     border-bottom: 1px solid #ECECEC;
 }
 
+.header .container {
+    display: flex;
+    align-items: center;
+}
 
 .logo {
     color: var(--black-color);
@@ -98,12 +94,17 @@ h1, h2, h3, h4, h5, h6, p, ul {
     text-decoration: none;
 }
 
+.header .logo {
+    margin-right: 93px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
 .footer .logo {
     display: inline-block;
     margin-bottom: 20px;
 
-    color: var(--primary-white-color);
-    
+    color: var(--primary-white-color);    
 }
 
 .logo>span {
@@ -112,7 +113,24 @@ h1, h2, h3, h4, h5, h6, p, ul {
 
 /* Навігація */
 
+.navigation {
+    display: flex;
+    align-items: center;
+}
+
+.site-nav {
+    display: flex;
+}
+
+.site-nav .item+.item {
+    margin-left: 50px;
+}
+
 .site-nav .link {
+    display: block;
+    padding-top: 32px;
+    padding-bottom: 32px;
+
     color: var(--title-text-color);
     font-weight: 500;
     font-size: 14px;
@@ -120,8 +138,6 @@ h1, h2, h3, h4, h5, h6, p, ul {
     letter-spacing: 0.02em;
     text-decoration: none;
 }
-
-
 
 .site-nav .link:hover,
 .site-nav .link:focus {
@@ -133,9 +149,21 @@ h1, h2, h3, h4, h5, h6, p, ul {
 }
 
 /* Контакти в шапці */
+
+.header-contacts {
+    display: flex;
+    margin-left: auto;
+}
+
+.header-contacts .item+.item {
+    margin-left: 50px;
+}
+
 .header-contacts .link {
+    padding-top: 32px;
+    padding-bottom: 32px;
+
     color: var(--primary-text-color);
-    font-family: 'Roboto';
     font-weight: 500;
     font-size: 14px;
     line-height: 1.14;
@@ -151,22 +179,19 @@ h1, h2, h3, h4, h5, h6, p, ul {
 /* Підвал */
 
 .footer {
-    /* min-width: 252px; */
-
     background-color: var(--secondary-bg-color);
 }
 
-.footer .container {
+.footer {
     padding-top: 60px;
     padding-bottom: 60px;
 }
 
-
 .address .link {
+    display: inline-block;
     padding-bottom: 9px;
 
     color: var(--contacts-link-color);
-
     font-style: normal;
     font-size: 14px;
     line-height: 1.71;
@@ -175,7 +200,6 @@ h1, h2, h3, h4, h5, h6, p, ul {
 
 .address .link.primary {
     color: var(--primary-white-color);
-
 }
 
 .address .link:hover,
@@ -186,25 +210,21 @@ h1, h2, h3, h4, h5, h6, p, ul {
 /* Головний контент */
 /* Блок герой */
 
-.section.hero {
-    min-height: 600px;
+.hero {
+    padding: 200px 0;
           
     background-color: var(--secondary-bg-color);
-    
-    text-align: center;
-    
+    text-align: center;    
 }
 
 .hero-block {
-    padding: 106px 252px;
-    
+    padding: 0px 252px;
 }
 
 .hero-title {
     margin-bottom: 30px;
 
     color: var(--primary-white-color);
-
     font-weight: 900;
     font-size: 44px;
     line-height: 1.36;
@@ -213,13 +233,11 @@ h1, h2, h3, h4, h5, h6, p, ul {
 }
 
 .hero-btn {
-    
+    padding: 10px 32px;
+    border: none;
 
     background-color: var(--acent-color);
     color: var(--primary-white-color);
-
-    padding: 10px 32px;
-    border: none;
     font-weight: 700;
     font-size: 16px;
     line-height: 1.88;
@@ -236,14 +254,12 @@ h1, h2, h3, h4, h5, h6, p, ul {
 .section {
     padding-top: 94px;
     padding-bottom: 94px;
-    outline: 2px solid tomato;
 }
 
 .section-title {
     margin-bottom: 50px;
 
     color: var(--title-text-color);
-
     font-weight: 700;
     font-size: 36px;
     line-height: 1.17;
@@ -258,7 +274,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
 }
 
 .feature-list .item {
-    width: 270px;
+    flex-basis: calc((100% - 90px) / 4);
 }
 
 .feature-list {
@@ -266,13 +282,10 @@ h1, h2, h3, h4, h5, h6, p, ul {
     justify-content: space-between;
 }
 
-
-
 .feature-list .title {
     margin-bottom: 10px;
 
     color: var(--title-text-color);
-
     font-weight: 700;
     font-size: 14px;
     line-height: 1.14;
@@ -294,12 +307,10 @@ h1, h2, h3, h4, h5, h6, p, ul {
     display: block;
 }
 
-
 /* Наша команда */
 
 .section.team {
     background-color: var(--tertiary-bg-color);
-
     text-align: center;
 }
 
@@ -310,7 +321,6 @@ h1, h2, h3, h4, h5, h6, p, ul {
 
 .cards .item {
     display: block;
-    width: 270px;
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -329,7 +339,6 @@ h1, h2, h3, h4, h5, h6, p, ul {
     margin-bottom: 10px;
 
     color: var(--title-text-color);
-
     font-weight: 500;
     font-size: 16px;
     line-height: 1.19;
@@ -351,19 +360,16 @@ h1, h2, h3, h4, h5, h6, p, ul {
     margin-bottom: 50px;
 }
 
-.filters > .item:not(last-child) {
+.filters .item:not(last-child) {
     margin-right: 8px;
 }
 
 .filter-btn {
-
     padding: 6px 22px;
     border: none;
 
     background-color: var(--button-bg-color);
     color: var(--title-text-color);
-
-
     font-weight: 500;
     font-size: 16px;
     line-height: 1.62;
@@ -379,16 +385,15 @@ h1, h2, h3, h4, h5, h6, p, ul {
 
 .projects {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
     gap: 30px;
 }
 
-.project {
-    width: 370px;
+.projects .item {
+    flex-basis: calc((100% - 60px) / 3);       
 }
 
-.project .pic {
+.projects .pic {
     display: block;
 }
 
@@ -402,7 +407,6 @@ h1, h2, h3, h4, h5, h6, p, ul {
     margin-bottom: 4px;
 
     color: var(--title-text-color);
-
     font-weight: 700;
     font-size: 18px;
     line-height: 2.0;
